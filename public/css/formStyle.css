@@ -1,0 +1,81 @@
+/*this will be used for the registration and login form contents as well as importing of data*/
+form{
+    margin-top:15%;
+
+}
+
+.fileInput{
+    align-content: center;
+}
+
+.importForm{
+    border-style: solid;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    background-color:lightgrey;
+}
+
+.registerForm{
+    border-style: solid;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    background-color:lightgrey;
+}
+
+.loginForm{
+    border-style: solid;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+    background-color:lightgrey;
+}
+
+.logoutForm{
+    text-align:center;
+    margin-left:2.5%;
+    margin-right:2.5%;
+    margin-top:15%;
+    border-style:solid;
+    background-color:lightgrey;
+}
+
+.form-group{
+    margin-bottom: 2.5%;
+}
+
+label{
+    display:block;
+}
+
+.regUserName{
+    margin-bottom:2.5%;
+}
+
+.regEmail{
+    margin-bottom:2.5%;
+}
+
+.confEmail{
+    margin-bottom:2.5%;
+}
+
+.regPass{
+    margin-bottom:2.5%;
+}
+
+.confPass{
+    margin-bottom:2.5%;
+}
+
+.import-btn{
+  display:block;
+    margin: 0 auto;
+}

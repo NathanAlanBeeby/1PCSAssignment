@@ -1,0 +1,36 @@
+/*This is to be used for the non-user and user home pages, keep the style, welcome the user whom logs in*/
+h1{
+    color: black;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+body{
+    background-color:white;
+
+}
+
+.leftBox{
+    float: left;
+    width: 45%;
+    margin-top: 12%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: black;
+}
+
+.rightBox{
+    float: left;
+    width: 45%;
+    margin-top: 12%;
+    margin-left: 2.5%;
+    padding-right: 2.5%;
+    color: black;
+}
+
+.bottomContent{
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+}
+

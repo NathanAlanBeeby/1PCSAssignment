@@ -1,0 +1,58 @@
+/*this will be used for the viewing of data and logout page*/
+h1{
+    color: black;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+body{
+    background-color:white;
+
+}
+
+p{
+    margin-left:0.5%;
+    padding-right:5.5%;
+}
+
+
+.content{
+    background-color:lightgrey;
+    margin-top: 15%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-style: solid;
+    margin-bottom: 20%;
+}
+
+
+
+.singleRecord{
+    border-style: solid;
+    padding-bottom: 2.5%;
+    margin-top:2.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+
+}
+
+.links{
+    padding-bottom:2.5%;
+    text-align:center;
+
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    margin: auto;
+    padding: 2.5%;
+
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+}

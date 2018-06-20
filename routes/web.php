@@ -27,8 +27,11 @@ Route::post('/user-registration', 'RegistrationController@store');
 
 Route::get('/view-data', 'RecordsController@index')->name('viewData'); // viewing all of the entries of data
 Route::get('/view-data/{id}', 'RecordsController@show')->name('singleRecord'); //viewing one specific entry, using the hyperlink from the view
-Route::post('/view-data', 'RecordsController@import'); // storing the information to the database, via the submission
-Route::get('import-data', 'RecordsController@view')->name('dataImport');
+Route::get('/import-data', 'RecordsController@view')->name('dataImport');
+Route::post('/view-data', 'RecordsController@store')->name('storeData');
+
+//Route::post('/view-data', 'RecordsController@import'); // storing the information to the database, via the submission
+
 
 
 

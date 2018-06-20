@@ -23,8 +23,8 @@ class CreateRecordTable extends Migration
             $table->integer('phoneNumber')->unique(); // integer - numbers
             $table->integer('altPhone')->unique(); //integer - numbers
             $table->integer('faxNumber')->unique(); //integer - numbers
-            $table->string('cellNumber')->unique(); //string - numbers
-            $table->string('email')->unique(); // string - email field
+            $table->integer('cellNumber')->unique(); //string - numbers
+            $table->integer('email')->unique(); // string - email field
             $table->string('website'); //string and numbers
             $table->string('address'); // string and numbers
             $table->string('city'); //string

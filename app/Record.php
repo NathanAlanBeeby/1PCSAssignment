@@ -10,9 +10,11 @@ class Record extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'First Name','Last Name', 'Company', 'Profession','Chapter Name', 'Phone Number', 'Alt Phone','Fax Number', 'Cell Number',
-        'Email','Website', 'Address', 'City','State', 'ZIP', 'Substitute','Status'
+    protected $fillable=[
+        'firstName','lastName', 'company', 'profession','chapterName', 'phoneNumber', 'altPhone','faxNumber', 'cellNumber',
+        'email','website', 'address', 'city','state', 'zipCode', 'substitute','joinDate', 'renewDate', 'sponsor', 'Status'
     ];
+
+
 
 }

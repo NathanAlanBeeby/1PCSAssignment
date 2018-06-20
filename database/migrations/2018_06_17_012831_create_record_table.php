@@ -20,10 +20,10 @@ class CreateRecordTable extends Migration
             $table->string('company'); //string - text and numbers
             $table->string('profession'); // string - Only text
             $table->string('chapterName'); //string  - text and numbers
-            $table->string('phoneNumber')->unique(); // integer - numbers
-            $table->string('altPhone')->unique(); //integer - numbers
-            $table->string('faxNumber')->unique(); //integer - numbers
-            $table->string('cellNumber')->unique(); //string - numbers
+            $table->string('phoneNumber'); // integer - numbers
+            $table->string('altPhone'); //integer - numbers
+            $table->string('faxNumber'); //integer - numbers
+            $table->string('cellNumber'); //string - numbers
             $table->string('email'); // string - email field
             $table->string('website'); //string and numbers
             $table->string('address'); // string and numbers
@@ -32,8 +32,8 @@ class CreateRecordTable extends Migration
             $table->string('zipCode'); //string and numbers
             $table->string('substitute'); // string and numbers
             $table->boolean('status'); //bool true or false
-            $table->string('joinDate'); //date field
-            $table->string('renewDate'); //date field
+            $table->dateTime('joinDate'); //date field
+            $table->dateTime('renewDate'); //date field
             $table->string('sponsor'); //string - text - name
             $table->timestamps();
         });
@@ -46,6 +46,6 @@ class CreateRecordTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('record');
+        Schema::dropIfExists('records');
     }
 }

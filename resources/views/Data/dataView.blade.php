@@ -16,7 +16,7 @@
 
         <a href="/view-data/{{ $record->id }}">
             {{ $record->id }} :
-            {{ $record->firstName }}
+            {{ $record->firstname }}
             {{ $record->lastName }} -
             {{ $record->company }} -
             {{ $record->address }} ,

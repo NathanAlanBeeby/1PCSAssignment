@@ -20,11 +20,11 @@
         <tr>
             <tr>
             <th>First Name</th>
-            <td>{{$record->firstName}}</td>
+            <td>{{$record->firstname}}</td>
         </tr>
         <tr>
             <th>Last Name</th>
-            <td>{{$record->firstName}}</td>
+            <td>{{$record->lastName}}</td>
         </tr>
         <tr>
             <th>Company</th>
@@ -84,11 +84,11 @@
             <td>{{$record->status}}</td>
          <tr>
             <th>Join Date</th>
-            <td>{{$record->joinDate}}</td>
+            <td>{{$record->joinDate->format('d/m/Y')}}</td>
         </tr>
         <tr>
             <th>renew Date</th>
-            <td>{{$record->renewDate}}</td>
+            <td>{{$record->renewDate->format('d/m/Y') }}</td>
         </tr>
         <tr>
             <th>Sponsor</th>

@@ -52,73 +52,62 @@ class RecordsController extends Controller
 
         }
 
+
+
+        $count = 1; // Start @ 1 due to HEADER ROW
+
         //looping through other columns
         while($columns=fgetcsv($file))
         {
+            $count++;
             if($columns[0]=="")
             {
                 continue;
             }
-            //trim data
-            foreach ($columns as $key => &$value) { // loop through values
-               // dd($columns); // prints information after header
-                $value=preg_replace('/\D/','',$value); // replace any undesirable values
 
-            }
-
-
-
-            $data= array_combine($escapedHeader, $columns); // combine the array of header with the columns
+            $data= array_combine($escapedHeader, $columns); // combine the array of header with the column
 
             // setting type
             foreach ($data as $key => &$value) { // looping through values
-                $value=($key=="phoneNumber" || $key=="altPhone" || $key=="faxNumber" ||
-                $key=="cellNumber")?(integer)$value: (float)$value; // if the value any of these, replace it to integer value
+                $data[$key] = ($key != "status") ? (string)$value : (float)$value; // if the value any of these, replace it to integer value
+            }
+
            // dd($data);
+
+            try {
+
+                $record = Record::firstOrNew([
+                    'firstname' => $data['firstname'],
+                    'lastName' => $data['lastname'],
+                    'company' => $data['company'],
+                    'profession' => $data['profession'],
+                    'chapterName' => $data['chaptername'],
+                    'email' => $data['email'],
+                    'website' => $data['website'],
+                    'address' => $data['address'],
+                    'city' => $data['city'],
+                    'state' => $data['state'],
+                    'zipCode' => $data['zip'],
+                    'substitute' => $data['substitute'],
+                    'status' => $data['status'],
+                    'joinDate' => \Carbon\Carbon::createFromFormat('m/d/Y', $data['joindate']),
+                    'renewDate' => \Carbon\Carbon::createFromFormat('m/d/Y', $data['renewaldate']),
+                    'sponsor' => $data['sponsor'],
+                    'phoneNumber' => $data['phonenumber'],
+                    'altPhone' => $data['altphonenumber'],
+                    'faxNumber' => $data['faxnumber'],
+                    'cellNumber' => $data['cellnumber']
+                ]);
+
+                $record->save();
+
+            } catch (\Exception $e)
+            {
+                \Log::info('Import: Record '.$count.' skipped: ' . $e->getMessage());
+
             }
 
 
-            $firstName = $data['firstname'];
-            $lastName = $data['lastname'];
-            $company = $data['company'];
-            $profession = $data['profession'];
-            $chapterName = $data['chaptername'];
-            $phoneNumber = $data['phonenumber'];
-            $altPhone = $data['altphonenumber'];
-            $faxNumber = $data['faxnumber'];
-            $cellNumber = $data['cellnumber'];
-            $email = $data['email'];
-            $website = $data['website'];
-            $address = $data['address'];
-            $city = $data['city'];
-            $state = $data['state'];
-            $zipCode = $data['zip'];
-            $substitute = $data['substitute'];
-            $status = $data['status'];
-            $joinDate = $data['joindate'];
-            $renewDate = $data['renewaldate'];
-            $sponsor = $data['sponsor'];
-
-            $record = Record::firstOrNew(['phoneNumber'=>$phoneNumber,'altPhone'=>$altPhone, 'faxNumber'=>$faxNumber,'cellNumber'=>$cellNumber]);
-
-            $record->firstName=$firstName;
-            $record->lastName=$lastName;
-            $record->company=$company;
-            $record->profession=$profession;
-            $record->chapterName=$chapterName;
-            $record->company=$company;
-            $record->email=$email;
-            $record->website=$website;
-            $record->address=$address;
-            $record->city=$city;
-            $record->state=$state;
-            $record->zipCode=$zipCode;
-            $record->substitute=$substitute;
-            $record->status=$status;
-            $record->joinDate=$joinDate;
-            $record->renewDate=$renewDate;
-            $record->sponsor=$sponsor;
-            $record->save();
         }
 
         //return view('Data.dataImport');

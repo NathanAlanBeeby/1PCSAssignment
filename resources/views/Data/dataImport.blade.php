@@ -6,7 +6,7 @@
     @include('Page layout.nav')
 </head>
 <body>
-<form method="post" action="{{'/view-data'}}" enctype="multipart/form-data">
+<form id="" method="post" action="{{url('/view-data')}}" enctype="multipart/form-data">
     {{ csrf_field() }}
 
     <div class="importForm">

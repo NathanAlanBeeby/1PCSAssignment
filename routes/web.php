@@ -32,6 +32,7 @@ Route::post('/view-data', 'RecordsController@store')->name('storeData');
 
 //Route::post('/view-data', 'RecordsController@import'); // storing the information to the database, via the submission
 
+Auth::routes();
 
 
 
